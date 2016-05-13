@@ -1,2 +1,2 @@
-globals.lua
-nodemcu-uploader/
+/src/globals.lua
+/nodemcu-uploader/
