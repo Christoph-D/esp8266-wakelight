@@ -60,3 +60,9 @@ You may also need a level shifter between the LEDs and the ESP because
 the ESP is 3.3V but the WS2812 LEDs are 5V.  In my case it also worked
 without a level shifter, but adding one reduced glitches on the LED
 strips.
+
+OTA Upload
+----------
+
+The wakelight accepts over-the-air updates of lua files from the
+script `ota_upload.sh`.  There is currently no authentication.
