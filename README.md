@@ -1,9 +1,9 @@
 esp8266-wakelight
 =================
 
-An alarm clock with light instead of sound, with NTP time
-synchronization, and with programmable alarm times for each day of the
-week.
+An alarm clock with light instead of sound, simulating a sunrise, with
+NTP time synchronization, and with programmable alarm times for each
+day of the week.
 
 This code works on the esp8266 wifi module with the nodemcu firmware.
 It was successfully tested on an ESP-01 and an ESP-12E.
