@@ -1,0 +1,24 @@
+-- This file is a template for "globals.lua".  Please rename this file
+-- to globals.lua, or init.lua will fail to start.
+
+MY_HOSTNAME = "wakelight"
+
+WIFI_SSID = "..."
+WIFI_PASSWORD = "..."
+WIFI_STATIC_IP = "192.168.178.5" -- or set to nil for DHCP
+WIFI_NETMASK = "255.255.255.0"
+WIFI_GATEWAY = "192.168.178.1"
+
+NUM_LEDS = 144
+LED_PIN = 4
+-- The time ID for the wake light and the mood light.
+MAIN_TIMER_ID = 0
+-- The timer ID for one-shot timers like in ledblink.lua.
+TEMP_TIMER_ID = 1
+
+-- You need to make the clockpicker/ path available via HTTP.
+CLOCKPICKER_URL = "http://example.com/clockpicker"
+
+NTP_SERVER = "192.168.178.1"
+NTP_SYNC_INTERVAL_IN_HOURS = 24
+NTP_TIMER_ID = 2

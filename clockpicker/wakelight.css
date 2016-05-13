@@ -1,0 +1,29 @@
+body {
+  text-align: center;
+  background-color: #fdf6e3;
+}
+input, button {
+  font-size: 100%;
+}
+button {
+  margin-top: 5px;
+}
+
+#tf {
+  font-size: 140%;
+  display: inline-block;
+  padding-bottom: 6ex;
+}
+#tf input[type="text"] {
+  background-color: #FFFFFF;
+  border: 1px solid #AAAAAA;
+  text-align: center;
+}
+#tf input[type="checkbox"] {
+  margin-left: 20px;
+}
+
+#dst {
+  display: block;
+  padding-top: 0.5ex;
+}
