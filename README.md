@@ -78,3 +78,12 @@ https://github.com/jdunmire/kicad-ESP8266 .
 Because I could not readily find a level shifter component in kicad, I
 omitted that part in the schematic.  The actual hardware has a
 TXS0108E between pin 4 of the ESP chip and the WS2812B LED input.
+
+Mood Light
+----------
+
+There is also a very simple mood light feature that you can
+enable/disable manually from the web interface.  This is mostly an
+experiment and serves no purpose.  Currently implemented is red, green
+and white light.  Edit the file `src/mood.lua` if you would like to
+implement more complex lighting scenarios.
