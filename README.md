@@ -38,15 +38,15 @@ won't work.  Either
 [compile your own](https://hub.docker.com/r/marcelstoer/nodemcu-build/)
 or use http://nodemcu-build.com/ to get a recent firmware.
 
-The LEDs must be WS2812 modules.  You can change the number of LEDs in
-`globals.lua`.  The default for `NUM_LEDS` is 144, which is the number
-of LEDs on a common high density 1m strip.  For increased brightness,
-you can connect multiple strips in parallel without changing
-`NUM_LEDS`, or concatenate them and increase `NUM_LEDS` (I would
-recommend the former because the timing of these LEDs strains the ESP
-chip).  I would say that two 1m strips (144 LED/m), a total of 288
-LEDs, are the minimum for adequate brightness.  Unfortunately the
-WS2812 LEDs are not very efficient compared to modern LED bulbs.
+The LEDs must be WS2812B modules.  You can change the number of LEDs
+in `globals.lua`.  The default for `NUM_LEDS` is 144, which is the
+number of LEDs on a common high density 1m strip.  For increased
+brightness, you can connect multiple strips in parallel without
+changing `NUM_LEDS`, or concatenate them and increase `NUM_LEDS` (I
+would recommend the former because the timing of these LEDs strains
+the ESP chip).  I would say that two 1m strips (144 LED/m), a total of
+288 LEDs, are the minimum for adequate brightness.  Unfortunately the
+WS2812B LEDs are not very efficient compared to modern LED bulbs.
 
 Please be aware that driving the LEDs requires quite a lot of power
 (>25W for 144 LEDs).  A 5V cellphone charger or a computer USB port
@@ -57,12 +57,24 @@ module in nodemcu only works on the serial transmitter pin, which
 happens to be pin 4.
 
 You may also need a level shifter between the LEDs and the ESP because
-the ESP is 3.3V but the WS2812 LEDs are 5V.  In my case it also worked
-without a level shifter, but adding one reduced glitches on the LED
-strips.
+the ESP is 3.3V but the WS2812B LEDs are 5V.  In my case it also
+worked without a level shifter, but adding one reduced glitches on the
+LED strips.
 
 OTA Upload
 ----------
 
 The wakelight accepts over-the-air updates of lua files from the
 script `ota_upload.sh`.  There is currently no authentication.
+
+Schematic
+----------
+
+![schematic](https://raw.github.com/Christoph-D/esp8266-wakelight/master/schematic/wakelight_schematic.png)
+
+The schematic uses the ESP components from
+https://github.com/jdunmire/kicad-ESP8266 .
+
+Because I could not readily find a level shifter component in kicad, I
+omitted that part in the schematic.  The actual hardware has a
+TXS0108E between pin 4 of the ESP chip and the WS2812B LED input.
