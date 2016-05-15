@@ -3,6 +3,7 @@ set -eu
 
 cd "${0%/*}"
 
+# This must be a relative path.
 NODEMCU_UPLOADER='./nodemcu-uploader/nodemcu-uploader.py'
 NODEMCU_UPLOADER_GIT='https://github.com/kmpm/nodemcu-uploader'
 
@@ -16,5 +17,6 @@ if [[ ! -s "$NODEMCU_UPLOADER" ]]; then
     exit 1
 fi
 
-python "$NODEMCU_UPLOADER" --port /dev/ttyUSB${1-0} --baud 115200 \
-       upload --compile --restart src/*.lua
+cd src
+python ../"$NODEMCU_UPLOADER" --port /dev/ttyUSB${1-0} --baud 115200 \
+       upload --compile --restart *.lua

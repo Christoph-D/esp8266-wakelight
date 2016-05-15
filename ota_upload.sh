@@ -32,7 +32,7 @@ connect() {
 }
 
 for f in "$@"; do
-    { printf "ESP8266UPLOAD %s " "$f" ; cat "$f"; } | connect
+    { printf "ESP8266UPLOAD %s " "${f##*/}" ; cat "$f"; } | connect
 done
 
 echo "ESP8266RESET" | connect
