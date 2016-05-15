@@ -36,7 +36,9 @@ aliexpress).  First you need to flash it with a recent nodemcu
 firmware.  Don't use prebuilt firmwares, those are far too old and
 won't work.  Either
 [compile your own](https://hub.docker.com/r/marcelstoer/nodemcu-build/)
-or use http://nodemcu-build.com/ to get a recent firmware.
+or use http://nodemcu-build.com/ to get a recent firmware.  You need
+to enable at least the following modules: file, gpio, net, node,
+rtcmem, rtctime, sntp, tmr, uart, wifi, ws2812.
 
 The LEDs must be WS2812B modules.  You can change the number of LEDs
 in `globals.lua`.  The default for `NUM_LEDS` is 144, which is the
